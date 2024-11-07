@@ -1,4 +1,3 @@
-import com.example.jenkins.BuildToolManager
 import com.gseven.BuildToolManager
 
 /**
