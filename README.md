@@ -17,3 +17,14 @@ static void ensureDirectoryExistsWithPermissions(String directoryPath, boolean i
             println("Directory already exists: ${directoryPath}")
         }
     }
+
+    static void executeShellCommand(String command) {
+        def proc = command.execute()
+        proc.waitFor()
+        if (proc.exitValue() != 0) {
+            println("Error executing command: ${command}")
+            println("Error: ${proc.err.text}")
+        } else {
+            println("Command executed successfully: ${command}")
+        }
+    }
